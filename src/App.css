@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100&display=swap");
+
+div{
+	font-family: "Exo 2", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gratulation{
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+.gratulation__wrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.gratulation__background{
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #e39b5c;
+	pointer-events: none;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.gratulation__background-img{
+		position: relative;
+		height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.gratulation__table{
+	position: absolute;
+	z-index: 20;
+	left: 0;
+	top: 13.5%;
+
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.table{
+	position: relative;
+	width: calc(0.775 * 100vh);
+	height: calc(0.735 * 100vh);
+	left: -40px;
+
+	background-color: rgba(85, 68, 136, 0.595);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.line{
+	position: relative;
+	height: 10%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.item{
+	height: 100%;
+	width: 10%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.item:hover{
+	background-color: rgb(238, 92, 92);
+	transition: all 0.2s ease 0s;
+}
+.item__container{
+	font-size:  calc(0.0535 * 100vh);
+
+	height: 100%;
+	width: 100%;
+	user-select: none;
+}
+.clicked{
+	background-color: rgb(238, 92, 92);
+	transition: all 0.2s ease 0s;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.winner{
+	background-color: rgb(121, 198, 19);
 }
