@@ -49,11 +49,11 @@ div{
 
 .table{
 	position: relative;
-	width: calc(0.775 * 100vh);
+	width: calc(0.79 * 100vh);
 	height: calc(0.735 * 100vh);
 	left: -40px;
 
-	background-color: rgba(85, 68, 136, 0.595);
+	background-color: #93bb93;
 
 	display: flex;
 	flex-direction: column;
@@ -72,9 +72,7 @@ div{
 	height: 100%;
 	width: 10%;
 	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+
 }
 .item:hover{
 	background-color: rgb(238, 92, 92);
@@ -82,10 +80,15 @@ div{
 }
 .item__container{
 	font-size:  calc(0.0535 * 100vh);
-
 	height: 100%;
 	width: 100%;
 	user-select: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+span{
+	pointer-events: none;
 }
 .clicked{
 	background-color: rgb(238, 92, 92);

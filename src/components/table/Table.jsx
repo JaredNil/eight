@@ -13,43 +13,38 @@ const Table = () => {
 	const s = ['5:6', '6:6', '7:6', '8:6', '9:6']
 
 	React.useEffect(() => {
-		// console.log(select)
-		console.log(beaty + ';' + love + ';' + spring)
+		// console.log(beaty + ';' + love + ';' + spring)
 
-		if (beaty == b.length && beaty < 10) {
+		if (beaty === b.length && beaty < 10) {
 			b.forEach(letter => {
 				document.getElementById(letter).classList.add('winner')
 			})
 			popup('popup__beaty')
 			setBeaty(1000)
 		}
-		if (love == l.length && love < 10) {
+		if (love === l.length && love < 10) {
 			l.forEach(letter => {
 				document.getElementById(letter).classList.add('winner')
 			})
 			popup('popup__love')
 			setLove(1000)
 		}
-		if (spring == s.length && spring < 10) {
+		if (spring === s.length && spring < 10) {
 			s.forEach(letter => {
 				document.getElementById(letter).classList.add('winner')
 			})
 			popup('popup__spring')
 			setSpring(1000)
 		}
-	},)
+	}, [beaty, love, spring])
 
-	const popup = (text) => {
-		console.log(document.getElementsByClassName(text)[0])
-		document.getElementsByClassName(text)[0].classList.remove('hide')
-	}
+	const popup = (text) => { document.getElementsByClassName(text)[0].classList.remove('hide') }
 
 	const clickLetterHandler = (e) => {
 		words(e.target)
 
-
 		if (e.target.classList.contains('clicked')) {
-			let filtredSelect = select.filter(f => {
+			const filtredSelect = select.filter(f => {
 				if (f !== e.target.id) {
 					return f
 				}
@@ -65,13 +60,13 @@ const Table = () => {
 
 	const words = (letter) => {
 
-		if (letter.id == '5:6') {
+		if (letter.id === '5:6') {
 			if (!letter.classList.contains('added')) {
 				setLove(love + 1)
 				setSpring(spring + 1)
 			}
 			else {
-				if (love != 0) {
+				if (love !== 0) {
 					setLove(love - 1)
 					setSpring(spring - 1)
 				}
@@ -84,7 +79,7 @@ const Table = () => {
 					setBeaty(beaty + 1)
 				}
 				else {
-					if (beaty != 0) {
+					if (beaty !== 0) {
 						setBeaty(beaty - 1)
 					}
 				}
@@ -95,7 +90,7 @@ const Table = () => {
 					setLove(love + 1)
 				}
 				else {
-					if (love != 0) {
+					if (love !== 0) {
 						setLove(love - 1)
 					}
 				}
@@ -106,7 +101,7 @@ const Table = () => {
 					setSpring(spring + 1)
 				}
 				else {
-					if (spring != 0) {
+					if (spring !== 0) {
 						setSpring(spring - 1)
 					}
 				}
@@ -125,7 +120,7 @@ const Table = () => {
 								onClick={clickLetterHandler}
 								id={i + ':' + j}
 							>
-								{l}
+								<span>{l}</span>
 							</div>
 						</div>
 					})}

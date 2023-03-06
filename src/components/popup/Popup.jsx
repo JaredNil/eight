@@ -11,6 +11,7 @@ const Popup = (props) => {
 
 	let contentPicture
 	let classAdd
+
 	if (props.text == 'b') {
 		contentPicture = PromoBeaty
 		classAdd = 'popup__beaty'
@@ -24,13 +25,13 @@ const Popup = (props) => {
 	}
 
 
-
-
 	const hideHandler = (e) => {
 		if (e.target.classList.contains('popup__wrapper')) {
 			e.target.classList.add('hide')
 		}
 	}
+
+
 
 	return (
 		<div className={'popup__wrapper hide ' + classAdd} onClick={hideHandler} >
